@@ -3,7 +3,7 @@ import { ConcreteAuctioneerA } from "./concrete-auctioneerA";
 import { ConcreteAuctioneerB } from "./concrete-auctioneerB";
 import { ConcreteAuctioneerC } from "./concrete-auctioneerC";
 import { ConcreteAuctioneerD } from "./concrete-auctioneerD";
-import { Product } from "../product";
+import { Product } from "./product";
 
 const concreteAgent = new ConcreteAgent();
 
@@ -17,7 +17,7 @@ concreteAgent.subscribe(auctioneerB);
 concreteAgent.subscribe(auctioneerC);
 concreteAgent.subscribe(auctioneerD);
 
-const diamond = new Product({ name: "Diamante", price: 5 });
+const diamond = new Product({ nombre: "Diamante", precio: 5 });
 concreteAgent.product = diamond;
 
 concreteAgent.bidUp(auctioneerA, 10);
@@ -26,7 +26,7 @@ console.log("--------- Nueva subasta -----------");
 
 concreteAgent.unsubscribe(auctioneerD);
 
-const gem = new Product({ name: "Gema", price: 3 });
+const gem = new Product({ nombre: "Gema", precio: 3 });
 concreteAgent.product = gem;
 
 concreteAgent.bidUp(auctioneerB, 5);
