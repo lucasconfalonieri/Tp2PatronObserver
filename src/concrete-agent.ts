@@ -1,6 +1,6 @@
 import { Agent } from "./agent.interface";
 import { Auctioneer } from "./auctioneer.interface";
-import { Product } from "./product";
+import { Product } from "../product";
 
 export class ConcreteAgent implements Agent {
   public product: Product;
