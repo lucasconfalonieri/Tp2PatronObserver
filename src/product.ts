@@ -1,12 +1,12 @@
 import { Auctioneer } from "./auctioneer.interface";
 
 export class Product {
-  public price;
-  public name;
+  public precio;
+  public nombre;
   public auctionner: Auctioneer = null;
 
   constructor(product) {
-    this.price = product.price || 10;
-    this.name = product.name || "Unknown";
+    this.precio = product.precio || 10;
+    this.nombre = product.nombre || "Unknown";
   }
 }
