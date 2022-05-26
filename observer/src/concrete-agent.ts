@@ -1,10 +1,11 @@
-import { Agent } from "./agent.interface";
-import { Auctioneer } from "./auctioneer.interface";
-import { Product } from "../product";
+import { Agent } from "../interfaces/agent.interface";
+import { Auctioneer } from "../interfaces/auctioneer.interface";
+import { Product } from "./product";
 
 export class ConcreteAgent implements Agent {
   public product: Product;
-  private auctioneers: Auctioneer[] = [];
+  public auctioneers: Auctioneer[] = [];
+  public ofertado = 0;
 
   public subscribe(auctioneer: Auctioneer): void {
     const isExist = this.auctioneers.includes(auctioneer);
@@ -34,15 +35,16 @@ export class ConcreteAgent implements Agent {
   }
 
   public bidUp(auctioneer, bid): void {
-    console.log("Agente: Estoy haciendo algo importante");
+    this.ofertado = 1;
+    console.log("Agente: Estoy verificando la puja");
     const isExist = this.auctioneers.includes(auctioneer);
     if (!isExist) {
       return console.log("Agente: El subastador no esta en el sistema.");
     }
     if (this.product.precio >= bid) {
-      console.log("bid", bid);
+      console.log("puja", bid);
       console.log("precio", this.product.precio);
-      return console.log(`Agente: ${auctioneer.name}, bid no valido`);
+      return console.log(`Agente: ${auctioneer.name}, puja no valida`);
     }
     this.product.precio = bid;
     this.product.auctionner = auctioneer;

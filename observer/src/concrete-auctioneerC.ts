@@ -1,10 +1,10 @@
-import { Agent } from "./agent.interface";
-import { Auctioneer } from "./auctioneer.interface";
+import { Agent } from "../interfaces/agent.interface";
+import { Auctioneer } from "../interfaces/auctioneer.interface";
 import { ConcreteAgent } from "./concrete-agent";
 
-export class ConcreteAuctioneerA implements Auctioneer {
-  name = "ConcreteAuctioneerA";
-  MAX_LIMIT = 100;
+export class ConcreteAuctioneerC implements Auctioneer {
+  name = "ConcreteAuctioneerC";
+  MAX_LIMIT = 500;
 
   public update(agent: Agent): void {
     if (!(agent instanceof ConcreteAgent)) {
@@ -15,8 +15,12 @@ export class ConcreteAuctioneerA implements Auctioneer {
       return console.log(`${this.name}: Soy el dueño... Estoy esperando`);
     }
 
-    console.log(`${this.name}: No soy el dueño... Estoy pensando`);
-    const bid = Math.round(agent.product.precio * 1.1);
+    console.log(`${this.name}: No soy el dueño... Estoy analizando`);
+    const isBid = Math.random() < 0.2;
+    if (!isBid) {
+      return console.log(`${this.name}: Yo doy mas!`);
+    }
+    const bid = Math.round(agent.product.precio * 1.3);
     if (bid > this.MAX_LIMIT) {
       return console.log(`${this.name}: Cantidad maxima a pujar supera el limite.`);
     }

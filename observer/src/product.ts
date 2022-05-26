@@ -1,4 +1,4 @@
-import { Auctioneer } from "./src/auctioneer.interface";
+import { Auctioneer } from "../interfaces/auctioneer.interface";
 
 export class Product {
   public precio;

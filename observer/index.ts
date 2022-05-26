@@ -1,9 +1,9 @@
-import { ConcreteAgent } from "./concrete-agent";
-import { ConcreteAuctioneerA } from "./concrete-auctioneerA";
-import { ConcreteAuctioneerB } from "./concrete-auctioneerB";
-import { ConcreteAuctioneerC } from "./concrete-auctioneerC";
-import { ConcreteAuctioneerD } from "./concrete-auctioneerD";
-import { Product } from "../product";
+import { ConcreteAgent } from "./src/concrete-agent";
+import { ConcreteAuctioneerA } from "./src/concrete-auctioneerA";
+import { ConcreteAuctioneerB } from "./src/concrete-auctioneerB";
+import { ConcreteAuctioneerC } from "./src/concrete-auctioneerC";
+import { ConcreteAuctioneerD } from "./src/concrete-auctioneerD";
+import { Product } from "./src/product";
 
 const concreteAgent = new ConcreteAgent();
 
