@@ -18,7 +18,7 @@ export class ConcreteAuctioneerA implements Auctioneer {
     console.log(`${this.name}: No soy el dueño... Estoy analizando`);
     const bid = Math.round(agent.product.precio * 1.1);
     if (bid > this.MAX_LIMIT) {
-      return console.log(`${this.name}: Cantidad maxima a pujar supera el limite`);
+      return console.log(`${this.name}: Cantidad maxima a pujar supera el limite.`);
     }
     agent.bidUp(this, bid);
   }
