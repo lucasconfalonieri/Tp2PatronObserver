@@ -23,10 +23,10 @@ test('Cuando_SeCreaUnAuctioneer_Deberia_PoseerNombreYLimiteDePuja', () => {
 test('Cuando_SeCreaConcreteAgent_Deberia_PoseerSubastadoresYUnProducto', () => {
     const concreteAgent = new ConcreteAgent();
     expect.arrayContaining(concreteAgent.auctioneers);
-    const diamond = new Product({ nombre: "Diamante", precio: 5 });
+    const diamond = new Product({ nombre: "Diamante", precio: 4 });
     concreteAgent.product = diamond;
     expect(concreteAgent.product.nombre).toEqual("Diamante");
-    expect(concreteAgent.product.precio).toBe(5);
+    expect(concreteAgent.product.precio).toBe(4);
 }); 
 
 test('Cuando_Subscribe_Deberia_AgregarUnSubastadorALosSubastadores', () => {
